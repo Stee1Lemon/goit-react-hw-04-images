@@ -51,12 +51,12 @@ export function App() {
   };
 
   const handlePictures = query => {
+    setNoImagesFound(false);
+    setError(false);
     setQuery(query);
     setImagesToRender([]);
     setPage(1);
     setTotalHits(0);
-    setNoImagesFound(false);
-    setError(false);
   };
 
   const handleMorePictures = () => {
