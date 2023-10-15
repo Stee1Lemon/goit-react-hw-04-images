@@ -55,6 +55,8 @@ export function App() {
     setImagesToRender([]);
     setPage(1);
     setTotalHits(0);
+    setNoImagesFound(false);
+    setError(false);
   };
 
   const handleMorePictures = () => {
