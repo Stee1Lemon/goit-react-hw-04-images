@@ -3,15 +3,14 @@ import styles from './Modal.module.css';
 
 export function Modal({ imgUrl, closeModal }) {
   useEffect(() => {
+    function escClose(e) {
+      if (e.key === 'Escape') closeModal();
+    }
     window.addEventListener('keydown', escClose);
     return () => {
       window.removeEventListener('keydown', escClose);
     };
-  });
-
-  function escClose(e) {
-    if (e.key === 'Escape') closeModal();
-  }
+  }, [closeModal]);
 
   function handleClick(e) {
     if (e.target === e.currentTarget) closeModal();
